@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青森紅葉 9 日｜東京來回深度旅遊指南 · 2026 秋</title>
+<style>
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+:root {
+  /* 紅葉主題色 */
+  --color-crimson: #B5382E;       /* 深紅葉紅 */
+  --color-vermilion: #D9533C;     /* 朱紅 */
+  --color-amber: #E8A33D;         /* 金黃 */
+  --color-ochre: #C97D2C;         /* 赭石 */
+  --color-rust: #8E3B25;          /* 鐵鏽 */
+
+  /* 自然背景色 */
+  --color-ink: #1A1A1A;           /* 深墨（標題） */
+  --color-graphite: #3A3A3A;      /* 石墨（內文） */
+  --color-stone: #6B6B6B;         /* 砂岩（次要文字） */
+  --color-mist: #F5F1EB;          /* 薄霧（背景） */
+  --color-paper: #FCFAF7;         /* 紙白 */
+  --color-line: #DDD5C8;          /* 紙紋邊線 */
+
+  /* 地形色 */
+  --color-forest: #2E4A35;        /* 青森森林 */
+  --color-ocean: #2A5A6B;         /* 八戶海 */
+  --color-lake: #4D7C8A;          /* 十和田湖 */
+  --color-snow: #E8EEF0;          /* 八甲田雪 */
+
+  /* 強調 */
+  --color-warn: #C4631A;          /* 警告橘 */
+  --color-info: #2A5A6B;          /* 提示藍綠 */
+
+  /* 字體 */
+  --font-display: "Source Serif Pro", "Noto Serif TC", "Songti TC", "SimSun", serif;
+  --font-body: "Source Sans Pro", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-mono: "SF Mono", "Menlo", "Consolas", monospace;
+
+  /* 尺寸 */
+  --max-width: 1180px;
+  --gutter: 32px;
+  --radius: 4px;
+}
+
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 17px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-graphite);
+  background: var(--color-paper);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+a {
+  color: var(--color-crimson);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s;
+}
+a:hover { border-bottom-color: var(--color-crimson); }
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 1rem; }
+h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin-bottom: 0.6rem; }
+h4 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+
+p { margin-bottom: 1em; }
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--color-stone);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-vermilion);
+  margin-bottom: 0.6em;
+}
+
+.ja {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+}
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+section { padding: 5rem 0; }
+section + section { border-top: 1px solid var(--color-line); }
+
+/* ==========================================================================
+   COVER
+   ========================================================================== */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(217,83,60,0.4) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 70%, rgba(232,163,61,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 30%, rgba(142,59,37,0.3) 0%, transparent 60%),
+    linear-gradient(180deg, #1a1a1a 0%, #3a1a14 100%);
+  color: var(--color-paper);
+  padding: 4rem 2rem;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 85%, rgba(232,163,61,.2) 0, transparent 1.5%),
+    radial-gradient(circle at 85% 15%, rgba(217,83,60,.3) 0, transparent 2%),
+    radial-gradient(circle at 50% 50%, rgba(232,163,61,.15) 0, transparent 3%);
+  pointer-events: none;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  text-align: center;
+}
+
+.cover-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(252, 250, 247, 0.7);
+  border: 1px solid rgba(252, 250, 247, 0.3);
+  padding: 0.5em 1.4em;
+  border-radius: 100px;
+  margin-bottom: 2.5rem;
+}
+
+.cover-title {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  color: var(--color-paper);
+  margin-bottom: 0.4em;
+  letter-spacing: 0.05em;
+}
+
+.cover-title-en {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-style: italic;
+  color: rgba(252, 250, 247, 0.65);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.cover-subtitle {
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  color: rgba(252, 250, 247, 0.85);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.cover-meta {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  font-size: 0.95rem;
+  color: rgba(252, 250, 247, 0.7);
+}
+
+.cover-meta-item .label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: rgba(252, 250, 247, 0.5);
+  margin-bottom: 0.3em;
+}
+
+.cover-meta-item .value {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-paper);
+  font-weight: 500;
+}
+
+.cover-author {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: rgba(252, 250, 247, 0.5);
+  text-transform: uppercase;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: rgba(252, 250, 247, 0.5);
+  text-transform: uppercase;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, 0); opacity: .5; }
+  50% { transform: translate(-50%, 6px); opacity: 1; }
+}
+
+/* ==========================================================================
+   TABLE OF CONTENTS
+   ========================================================================== */
+.toc {
+  background: var(--color-mist);
+  padding: 4rem 0;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.toc-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background: var(--color-paper);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-line);
+  transition: all .2s;
+}
+.toc-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-crimson);
+  box-shadow: 0 6px 16px rgba(181, 56, 46, .12);
+}
+
+.toc-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-crimson);
+  font-style: italic;
+}
+
+.toc-text {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   EDITORIAL SECTIONS (article intro, geography)
+   ========================================================================== */
+.editorial {
+  background: var(--color-paper);
+}
+
+.editorial-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.editorial-header .eyebrow {
+  margin-top: 0.5rem;
+}
+
+.editorial-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.editorial-body {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.editorial-body p {
+  margin-bottom: 1.2em;
+}
+
+.editorial-body p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 4.5em;
+  float: left;
+  line-height: 0.85;
+  margin: 0.05em 0.1em 0 0;
+  color: var(--color-crimson);
+  font-weight: 700;
+}
+
+.pullquote {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  line-height: 1.4;
+  color: var(--color-ink);
+  font-style: italic;
+  border-left: 4px solid var(--color-vermilion);
+  padding: 1rem 0 1rem 2rem;
+  margin: 2.5rem 0;
+  font-weight: 400;
+}
+
+.pullquote-cite {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--color-stone);
+  margin-top: 0.6em;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   GEOGRAPHY DIAGRAM
+   ========================================================================== */
+.geography {
+  background: linear-gradient(180deg, var(--color-mist) 0%, var(--color-paper) 100%);
+  text-align: center;
+}
+
+.geography h2 { margin-bottom: 0.5em; }
+.geography .lead { margin-bottom: 3rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.geo-map {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.geo-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  gap: 1rem;
+  align-items: center;
+  background: var(--color-paper);
+  padding: 1.2rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-line);
+  text-align: left;
+}
+
+.geo-icon {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.geo-content h4 {
+  margin-bottom: 0.2em;
+}
+
+.geo-content p {
+  font-size: 0.92rem;
+  color: var(--color-stone);
+  margin: 0;
+}
+
+.geo-arrow {
+  text-align: center;
+  font-family: var(--font-display);
+  color: var(--color-crimson);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   TIMELINE — DAY BY DAY
+   ========================================================================== */
+.days {
+  background: var(--color-paper);
+}
+
+.day {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px dashed var(--color-line);
+}
+.day:last-child { border-bottom: none; }
+
+.day-meta {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+.day-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  background: var(--color-crimson);
+  padding: 0.4em 1em;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+.day-date {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--color-stone);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6em;
+}
+
+.day-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--color-ink);
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.day-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-stone);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.day-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.day-stat {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--color-graphite);
+  background: var(--color-mist);
+  padding: 0.3em 0.8em;
+  border-radius: 100px;
+}
+
+.day-stat strong {
+  color: var(--color-crimson);
+  font-weight: 700;
+}
+
+/* Day content */
+
+.day-content h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-ink);
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid var(--color-amber);
+  display: inline-block;
+}
+
+.day-content h3:first-child { margin-top: 0; }
+
+.schedule {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.schedule li {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(221, 213, 200, 0.5);
+  font-size: 0.96rem;
+}
+
+.schedule li:last-child { border-bottom: none; }
+
+.schedule .time {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-crimson);
+  font-size: 0.95rem;
+}
+
+.schedule .activity strong {
+  color: var(--color-ink);
+}
+
+.schedule .activity em {
+  display: block;
+  color: var(--color-stone);
+  font-size: 0.85rem;
+  margin-top: 0.2em;
+  font-style: normal;
+}
+
+/* Highlight callout */
+.callout {
+  background: linear-gradient(135deg, rgba(232,163,61,.08), rgba(217,83,60,.05));
+  border-left: 4px solid var(--color-amber);
+  padding: 1rem 1.4rem;
+  margin: 1.5rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.callout.warn {
+  background: linear-gradient(135deg, rgba(196,99,26,.08), rgba(217,83,60,.05));
+  border-left-color: var(--color-warn);
+}
+
+.callout.tip {
+  background: linear-gradient(135deg, rgba(46,74,53,.08), rgba(42,90,107,.05));
+  border-left-color: var(--color-forest);
+}
+
+.callout-title {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+  margin-bottom: 0.4em;
+}
+
+.callout.warn .callout-title { color: var(--color-warn); }
+.callout.tip .callout-title { color: var(--color-forest); }
+
+.callout p { margin-bottom: 0.4em; }
+.callout p:last-child { margin-bottom: 0; }
+.callout ul { margin-left: 1.2em; }
+
+/* Spot card (a place to visit) */
+.spot {
+  background: var(--color-mist);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.6rem;
+  margin: 1.5rem 0;
+  border: 1px solid var(--color-line);
+}
+
+.spot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 0.4em;
+  gap: 1rem;
+}
+
+.spot-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.spot-name .ja {
+  display: block;
+  font-size: 0.85em;
+  color: var(--color-stone);
+  font-weight: 400;
+  margin-top: 0.15em;
+}
+
+.spot-meta {
+  font-size: 0.78rem;
+  color: var(--color-stone);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.spot-meta strong {
+  color: var(--color-crimson);
+}
+
+.spot p { font-size: 0.95rem; margin-bottom: 0.6em; }
+
+.spot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.spot-grid .label {
+  color: var(--color-stone);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  display: block;
+}
+
+/* ==========================================================================
+   LODGING
+   ========================================================================== */
+.lodging {
+  background: var(--color-mist);
+}
+
+.lodging-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.hotel {
+  background: var(--color-paper);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  border: 1px solid var(--color-line);
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-tier {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-vermilion);
+  font-weight: 700;
+  margin-bottom: 0.6em;
+}
+
+.hotel-tier.luxe { color: var(--color-amber); }
+.hotel-tier.budget { color: var(--color-forest); }
+
+.hotel-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-ink);
+  margin-bottom: 0.2em;
+}
+
+.hotel-name-ja {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--color-stone);
+  margin-bottom: 0.8em;
+}
+
+.hotel-price {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-crimson);
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.hotel-price small {
+  color: var(--color-stone);
+  font-weight: 400;
+  font-size: 0.75em;
+}
+
+.hotel p {
+  font-size: 0.92rem;
+  color: var(--color-graphite);
+  flex-grow: 1;
+}
+
+.hotel-features {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.8rem 0;
+}
+
+.hotel-feature {
+  font-size: 0.72rem;
+  background: var(--color-mist);
+  padding: 0.25em 0.7em;
+  border-radius: 100px;
+  color: var(--color-stone);
+}
+
+.hotel-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-crimson);
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-line);
+}
+
+/* ==========================================================================
+   TRANSPORT
+   ========================================================================== */
+.transport {
+  background: var(--color-paper);
+}
+
+.transport-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.transport-table th {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-stone);
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-bottom: 2px solid var(--color-crimson);
+}
+
+.transport-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: top;
+}
+
+.transport-table td:first-child {
+  font-family: var(--font-mono);
+  color: var(--color-crimson);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.transport-table td:nth-child(2) {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.transport-table .price {
+  font-family: var(--font-mono);
+  color: var(--color-crimson);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   FOOD
+   ========================================================================== */
+.food {
+  background: linear-gradient(180deg, var(--color-paper) 0%, var(--color-mist) 100%);
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.food-card {
+  background: var(--color-paper);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  border: 1px solid var(--color-line);
+  position: relative;
+  overflow: hidden;
+}
+
+.food-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-vermilion), var(--color-amber));
+}
+
+.food-region {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-vermilion);
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.food-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-ink);
+  margin-bottom: 0.4em;
+}
+
+.food-name-ja {
+  font-size: 0.82rem;
+  color: var(--color-stone);
+  margin-bottom: 0.8em;
+}
+
+.food-card p {
+  font-size: 0.92rem;
+  color: var(--color-graphite);
+  margin-bottom: 0.8em;
+}
+
+.food-shops {
+  font-size: 0.85rem;
+  color: var(--color-stone);
+}
+
+.food-shops strong {
+  color: var(--color-crimson);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   PRE-DEPARTURE
+   ========================================================================== */
+.checklist {
+  background: var(--color-paper);
+}
+
+.check-list {
+  list-style: none;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.6rem;
+}
+
+.check-list li {
+  padding: 0.8rem 1rem;
+  background: var(--color-mist);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  font-size: 0.95rem;
+}
+
+.check-list li::before {
+  content: "☐";
+  font-size: 1.2rem;
+  color: var(--color-crimson);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.check-list li strong {
+  display: block;
+  color: var(--color-ink);
+  margin-bottom: 0.1em;
+}
+
+.check-list li em {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--color-stone);
+  font-style: normal;
+}
+
+/* ==========================================================================
+   RISK
+   ========================================================================== */
+.risk {
+  background: var(--color-mist);
+}
+
+.risk-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.risk-table th {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-stone);
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border-bottom: 2px solid var(--color-crimson);
+}
+
+.risk-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: top;
+}
+
+.risk-table td:first-child {
+  font-weight: 600;
+  color: var(--color-warn);
+}
+
+.risk-table td:last-child {
+  color: var(--color-forest);
+}
+
+/* ==========================================================================
+   BUDGET
+   ========================================================================== */
+.budget {
+  background: var(--color-paper);
+}
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.budget-item {
+  background: var(--color-mist);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  border: 1px solid var(--color-line);
+}
+
+.budget-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-stone);
+  margin-bottom: 0.5em;
+}
+
+.budget-amount {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-crimson);
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+
+.budget-amount small {
+  font-size: 0.7em;
+  color: var(--color-stone);
+  font-weight: 400;
+}
+
+.budget-note {
+  font-size: 0.85rem;
+  color: var(--color-stone);
+}
+
+.budget-total {
+  background: linear-gradient(135deg, var(--color-crimson), var(--color-rust));
+  color: var(--color-paper);
+  border: none;
+  grid-column: 1 / -1;
+}
+
+.budget-total .budget-label { color: rgba(252,250,247,0.7); }
+.budget-total .budget-amount { color: var(--color-paper); }
+.budget-total .budget-note { color: rgba(252,250,247,0.8); }
+
+/* ==========================================================================
+   COLOPHON
+   ========================================================================== */
+.colophon {
+  background: var(--color-ink);
+  color: rgba(252,250,247,0.6);
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+.colophon h2 {
+  color: var(--color-paper);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.colophon p {
+  max-width: 580px;
+  margin: 0 auto 1.5em;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.colophon-meta {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(252,250,247,0.4);
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(252,250,247,0.1);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 900px) {
+  section { padding: 3rem 0; }
+  .editorial-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .day { grid-template-columns: 1fr; gap: 1.5rem; }
+  .day-meta { position: static; }
+  .geo-row { grid-template-columns: 60px 1fr; }
+  .geo-arrow { display: none; }
+  .cover-meta { gap: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  :root { --gutter: 20px; }
+  html { font-size: 16px; }
+  .cover-meta { flex-direction: column; gap: 1rem; }
+  .schedule li { grid-template-columns: 50px 1fr; gap: 0.5rem; }
+  .spot-grid { grid-template-columns: 1fr; }
+  .food-grid, .lodging-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   PRINT (if needed)
+   ========================================================================== */
+@media print {
+  body { font-size: 11pt; }
+  section { padding: 1.5rem 0; page-break-inside: avoid; }
+  .cover { min-height: 50vh; }
+  a { color: inherit; text-decoration: underline; }
+}
+</style>
+</head>
+<body>
+
+<!-- =============================================================
+     COVER
+     ============================================================= -->
+<header class="cover">
+  <div class="cover-content">
+    <span class="cover-eyebrow">A Traveler's Guide · Autumn 2026</span>
+    <h1 class="cover-title">青森紅葉 9 日</h1>
+    <p class="cover-title-en">Aomori in Crimson &amp; Gold</p>
+    <p class="cover-subtitle">
+      從東京出發，三點深度：青森市區的蘋果與海鮮、<br>
+      十和田八幡平國立公園的溪谷與秘湯、八戶的海與繩文。<br>
+      秋天最美的時節，走一趟陸奧國。
+    </p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="label">Dates</span>
+        <span class="value">2026.10.31 – 11.08</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Duration</span>
+        <span class="value">9 Days / 8 Nights</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Region</span>
+        <span class="value">青森縣・東北</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Budget</span>
+        <span class="value">NT$50,000</span>
+      </div>
+    </div>
+    <p class="cover-author">Compiled for Eric · Hermes / Links · 2026.07</p>
+  </div>
+  <div class="scroll-cue">↓ Scroll</div>
+</header>
+
+<!-- =============================================================
+     TABLE OF CONTENTS
+     ============================================================= -->
+<section class="toc">
+  <div class="container">
+    <span class="eyebrow">Table of Contents</span>
+    <h2>本指南索引</h2>
+    <div class="toc-grid">
+      <a href="#prelude" class="toc-item"><span class="toc-num">I</span><span class="toc-text">為何選在 11 月初</span></a>
+      <a href="#geography" class="toc-item"><span class="toc-num">II</span><span class="toc-text">三點地理與動線</span></a>
+      <a href="#day-1" class="toc-item"><span class="toc-num">01</span><span class="toc-text">D1 · 東京 → 青森</span></a>
+      <a href="#day-2" class="toc-item"><span class="toc-num">02</span><span class="toc-text">D2 · 奧入瀨溪流</span></a>
+      <a href="#day-3" class="toc-item"><span class="toc-num">03</span><span class="toc-text">D3 · 蔦沼水鏡</span></a>
+      <a href="#day-4" class="toc-item"><span class="toc-num">04</span><span class="toc-text">D4 · 奧入瀨東段</span></a>
+      <a href="#day-5" class="toc-item"><span class="toc-num">05</span><span class="toc-text">D5 · 八甲田纜車</span></a>
+      <a href="#day-6" class="toc-item"><span class="toc-num">06</span><span class="toc-text">D6 · 蕪嶋與種差海岸</span></a>
+      <a href="#day-7" class="toc-item"><span class="toc-num">07</span><span class="toc-text">D7 · 陸奧小京都</span></a>
+      <a href="#day-8" class="toc-item"><span class="toc-num">08</span><span class="toc-text">D8 · 秘湯縱走</span></a>
+      <a href="#day-9" class="toc-item"><span class="toc-num">09</span><span class="toc-text">D9 · 歸途</span></a>
+      <a href="#lodging" class="toc-item"><span class="toc-num">L</span><span class="toc-text">住宿推薦</span></a>
+      <a href="#transport" class="toc-item"><span class="toc-num">T</span><span class="toc-text">交通票券</span></a>
+      <a href="#food" class="toc-item"><span class="toc-num">F</span><span class="toc-text">在地美食</span></a>
+      <a href="#budget" class="toc-item"><span class="toc-num">¥</span><span class="toc-text">預算總覽</span></a>
+      <a href="#checklist" class="toc-item"><span class="toc-num">✓</span><span class="toc-text">行前 Checklist</span></a>
+      <a href="#risk" class="toc-item"><span class="toc-num">!</span><span class="toc-text">風險預案</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================
+     I. PRELUDE — 為何選在 11 月初
+     ============================================================= -->
+<section id="prelude" class="editorial">
+  <div class="container">
+    <div class="editorial-header">
+      <div>
+        <span class="eyebrow">I · Prelude</span>
+      </div>
+      <div>
+        <h2>為何選在 11 月初</h2>
+      </div>
+    </div>
+    <div class="editorial-body">
+      <p>十和田八幡平國立公園的海拔落差超過一千公尺，從山頂到溪谷，紅葉像一場為期三週的接力賽。山頂的八甲田在 9 月下旬就開始變色；中段山腰的八甲田纜車沿線，十月中旬轉紅；至於十和田湖與奧入瀨溪流，總要等到 10 月最後一週才進入巔峰。</p>
+
+      <p>也就是說，<strong>10/31 到 11/8</strong>這段窗口，是青森秋色最飽滿、最立體的時刻。山頂已落葉換上初雪，溪谷正紅到發紫，而海拔稍低的城ヶ倉大橋與奧入瀨東段，則剛好進入金黃與橙紅交織的層次。</p>
+
+      <div class="pullquote">
+        「紅葉是一種動態，每天的光線與氣溫都在改寫它的樣貌。」<br>
+        「能夠在同一個旅程裡，看見山頂初雪與溪谷火紅的對話，<br>
+        是東北秋天最珍貴的對位法。」
+        <span class="pullquote-cite">— 青森縣觀光聯盟</span>
+      </div>
+
+      <p>但這段窗口也是淡季的起點。岩木山的津輕岩木 Skyline 通常在 11 月上旬封道；十和田湖遊覽船的最後一班可能在 11 月 8 日當週；蘋果園的採收期則在 10 月底告一段落。本指南以「<strong>不依賴風險景點也能滿載而歸</strong>」為前提設計：把時間投資在確定會精彩的奧入瀨、蔦沼、八甲田、八戶，而把岩木山與白神十二湖留給未來。</p>
+
+      <p>九日行程不長不短。少了長距離的拉車，每一天都能深度探索兩個以上的景點——這正是 v2 版與初版最大的差別。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================
+     II. GEOGRAPHY
+     ============================================================= -->
+<section id="geography" class="geography">
+  <div class="container">
+    <span class="eyebrow">II · Geography</span>
+    <h2>三點地理與動線</h2>
+    <p class="lead">整段行程建立在三個節點：青森市區、十和田八幡平國立公園、八戶市區。三點以 JR 奥羽本線與 JR 巴士「みずうみ号」「おいらせ号」連成一條高效的 Y 字形動線。</p>
+
+    <div class="geo-map">
+      <div class="geo-row">
+        <div class="geo-icon">🗼</div>
+        <div class="geo-content">
+          <h4>東京</h4>
+          <p>起點。東北新幹線「はやぶさ」3 小時直達新青森。</p>
+        </div>
+        <div class="geo-arrow">↓</div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-icon">🍎</div>
+        <div class="geo-content">
+          <h4>青森市區</h4>
+          <p>基地 1 — 美術館、味噌咖哩、古川市場。JR 奥羽本線與巴士總站。</p>
+        </div>
+        <div class="geo-arrow">⇄</div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-icon">🍁</div>
+        <div class="geo-content">
+          <h4>十和田八幡平國立公園</h4>
+          <p>奧入瀨溪流、蔦沼、城ヶ倉大橋、八甲田纜車、酸ヶ湯溫泉、谷地溫泉。</p>
+        </div>
+        <div class="geo-arrow">⇄</div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-icon">🌊</div>
+        <div class="geo-content">
+          <h4>八戶市區</h4>
+          <p>基地 2 — 蕪嶋神社、種差海岸、是川繩文館、館鼻岸壁朝市。</p>
+        </div>
+        <div class="geo-arrow">↓</div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-icon">🍁</div>
+        <div class="geo-content">
+          <h4>黑石市（中野紅葉山）</h4>
+          <p>D7 從八戶出發的順路點。陸奧小京都，紅葉夜間點燈。</p>
+        </div>
+        <div class="geo-arrow">↓</div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-icon">🗼</div>
+        <div class="geo-content">
+          <h4>東京</h4>
+          <p>終點。新幹線 3 小時回程。</p>
+        </div>
+        <div class="geo-arrow">↑</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================
+     D1 — 東京 → 青森
+     ============================================================= -->
+<section id="day-1" class="days">
+  <div class="container">
+    <div class="day">
+      <aside class="day-meta">
+        <span class="day-tag">Day 01</span>
+        <div class="day-date">2026.10.31（六）</div>
+        <h2 class="day-title">東京 → 青森</h2>
+        <p class="day-subtitle">紅葉首日。桃園起飛、東京轉乘、新幹線直達青森。抵達後以古川市場的海鮮丼為這趟旅程暖身。</p>
+        <div class="day-stats">
+          <span class="day-stat">🚃 <strong>4h30min</strong></span>
+          <span class="day-stat">🌡️ 8–14°C</span>
+        </div>
+      </aside>
+
+      <div class="day-content">
+        <h3>時程</h3>
+        <ul class="schedule">
+          <li><span class="time">07:00</span><span class="activity"><strong>林口 → 桃園機場</strong><em>自行前往，建議預留 2 小時</em></span></li>
+          <li><span class="time">09:30</span><span class="activity"><strong>桃園 → 東京（成田／羽田）</strong><em>CI 系列航班，自行處理</em></span></li>
+          <li><span class="time">13:00</span><span class="activity"><strong>抵達東京</strong><em>Skyliner / 京成本線 ¥2,500 到東京站</em></span></li>
+          <li><span class="time">15:30</span><span class="activity"><strong>東京駅 → はやぶさ 23 号 → 新青森</strong><em>全車指定席，需事前訂位。JR PASS 啟用</em></span></li>
+          <li><span class="time">18:28</span><span class="activity"><strong>抵達新青森</strong><em>轉在來線 5 分鐘到青森駅</em></span></li>
+          <li><span class="time">19:30</span><span class="activity"><strong>飯店 Check-in</strong><em>青森駅前飯店</em></span></li>
+          <li><span class="time">20:00</span><span class="activity"><strong>古川市場 のっけ丼</strong><em>自選海鮮丼，¥1,500 以內</em></span></li>
+        </ul>
+
+        <div class="callout tip">
+          <div class="callout-title">旅人筆記</div>
+          <p>抵達青森的第一晚，以古川市場的「のっけ丼」打頭陣——這是青森市民的廚房，買一張食券（¥1,000–1,500）走進各攤自選海鮮，最後由師傅在你面前現捏。十一月的青森海鮮冷冽而鮮甜，正是時候。</p>
+        </div>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              青森駅前
+              <span class="ja">青森駅</span>
+            </div>
+            <div class="spot-meta"><strong>基地</strong> · 4 晚</div>
+          </div>
+          <p>青森縣的玄關。駅前直結巴士總站、Loft、A-FACTORY（蘋果酒專賣店）。飯店步行 5 分鐘內即可達。</p>
+          <div class="spot-grid">
+            <div><span class="label">推薦飯店</span>ダイワロイネット青森</div>
+            <div><span class="label">單晚</span>¥8,500</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- =============================================================
+     D2 — 奧入瀨溪流
+     ============================================================= -->
+    <div class="day">
+      <aside class="day-meta">
+        <span class="day-tag">Day 02</span>
+        <div class="day-date">2026.11.01（日）</div>
+        <h2 class="day-title">奧入瀨溪流</h2>
+        <p class="day-subtitle">日本最美溪流散步日。從子ノ口走到雲井の滝，再轉往十和田湖休屋搭遊覽船。晚上住進奧入瀨溪流溫泉。</p>
+        <div class="day-stats">
+          <span class="day-stat">🚃 <strong>3h</strong> 巴士</span>
+          <span class="day-stat">🥾 <strong>7km</strong> 步行</span>
+          <span class="day-stat">🍁 <strong>見頃</strong></span>
+        </div>
+      </aside>
+
+      <div class="day-content">
+        <h3>時程</h3>
+        <ul class="schedule">
+          <li><span class="time">07:30</span><span class="activity"><strong>青森駅前早餐</strong><em>富士食堂味噌咖哩（發祥地）</em></span></li>
+          <li><span class="time">08:10</span><span class="activity"><strong>青森駅東口 11 號 → みずうみ号 80 号</strong><em>¥2,400，前往子ノ口</em></span></li>
+          <li><span class="time">09:14</span><span class="activity"><strong>抵達子ノ口</strong><em>溪流散步入口</em></span></li>
+          <li><span class="time">09:30</span><span class="activity"><strong>奧入瀨溪流健行</strong><em>子ノ口 → 雲井の滝，來回 ~7km，3h</em></span></li>
+          <li><span class="time">13:00</span><span class="activity"><strong>子ノ口 → おいらせ号 23 号</strong><em>需事前預約制，¥1,600</em></span></li>
+          <li><span class="time">14:43</span><span class="activity"><strong>抵達十和田湖 休屋</strong><em>十和田神社、乙女の像散步</em></span></li>
+          <li><span class="time">15:30</span><span class="activity"><strong>十和田湖遊覽船</strong><em>休屋 → 子ノ口，50 分，¥1,760（11 月上旬末班）</em></span></li>
+          <li><span class="time">17:00</span><span class="activity"><strong>奧入瀨溪流溫泉 Check-in</strong><em>連住 2 晚</em></span></li>
+          <li><span class="time">18:30</span><span class="activity"><strong>旅館囲炉裏晚餐</strong><em>山菜會席料理</em></span></li>
+          <li><span class="time">20:00</span><span class="activity"><strong>露天溫泉 + 星空</strong><em>深山無光害，銀河可見</em></span></li>
+        </ul>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              奧入瀨溪流
+              <span class="ja">奥入瀬渓流</span>
+            </div>
+            <div class="spot-meta"><strong>米其林二星</strong> · 14km</div>
+          </div>
+          <p>從十和田湖子ノ口到燒山的 14 公里溪谷，被譽為日本最美溪流。200 多種苔蘚覆蓋的岩石、20 多處瀑布、層層疊疊的紅葉倒影，構成「溪流 + 苔 + 紅葉」三位一體的美學。11 月初正是見頃。</p>
+          <div class="spot-grid">
+            <div><span class="label">子ノ口 → 雲井の滝</span>~3km 單程</div>
+            <div><span class="label">雲井の滝高度</span>20m 三段瀑布</div>
+            <div><span class="label">步道難度</span>★☆☆ 平緩</div>
+            <div><span class="label">見頃</span>10/24 – 11/04</div>
+          </div>
+        </div>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              十和田湖
+              <span class="ja">十和田湖 · 休屋</span>
+            </div>
+            <div class="spot-meta"><strong>特別名勝</strong> · 日本第 3 深湖</div>
+          </div>
+          <p>雙火山口湖。乙女の像是詩人高村光太郎的作品。十和田湖遊覽船在 11 月上旬末班，是觀賞湖光山色最後的機會。</p>
+          <div class="spot-grid">
+            <div><span class="label">深度</span>326.8m（日本第 3）</div>
+            <div><span class="label">遊覽船</span>休屋 ⇔ 子ノ口 50 分</div>
+            <div><span class="label">末班</span>11 月上旬（2026 待查）</div>
+            <div><span class="label">票價</span>¥1,760</div>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">⚠ 注意</div>
+          <p>11/1 預約制「おいらせ号 23 号」需事前至 <a href="https://secure.j-bus.co.jp/hon/" target="_blank">j-bus</a> 預約。出發前 30 天開搶。</p>
+        </div>
+      </div>
+    </div>
+
+<!-- =============================================================
+     D3 — 蔦沼水鏡 + 城ヶ倉大橋 + 酸ヶ湯
+     ============================================================= -->
+    <div class="day">
+      <aside class="day-meta">
+        <span class="day-tag">Day 03</span>
+        <div class="day-date">2026.11.02（一）</div>
+        <h2 class="day-title">蔦沼水鏡 + 城ヶ倉 + 酸ヶ湯</h2>
+        <p class="day-subtitle">本日是 v2 版的靈魂。清晨的蔦沼紅葉水鏡、城ヶ倉大橋的 360 度全景、傍晚酸ヶ湯的混浴千人在風呂——陸奧秘境的完整一日。</p>
+        <div class="day-stats">
+          <span class="day-stat">🌅 <strong>5:30</strong> 起床</span>
+          <span class="day-stat">🥾 <strong>3km</strong> 蔦七沼</span>
+          <span class="day-stat">🍁 <strong>絕景</strong></span>
+        </div>
+      </aside>
+
+      <div class="day-content">
+        <h3>時程</h3>
+        <ul class="schedule">
+          <li><span class="time">05:30</span><span class="activity"><strong>旅館出發</strong><em>頭燈戴起，前往蔦温泉方向（5 min）</em></span></li>
+          <li><span class="time">06:00</span><span class="activity"><strong>蔦沼朝燒水鏡</strong><em>搶早場預約——8/1 開搶（限 8 人/車，¥2,000）</em></span></li>
+          <li><span class="time">07:30</span><span class="activity"><strong>蔦七沼巡禮</strong><em>蔦沼 → 鏡沼 → 月沼 → 長沼 → 菅沼 → 瓢箪沼，2.8km</em></span></li>
+          <li><span class="time">09:00</span><span class="activity"><strong>回蔦温泉 → 巴士 → 城ヶ倉大橋</strong><em>日本最長上路式拱橋，360m，紅葉絕景</em></span></li>
+          <li><span class="time">11:30</span><span class="activity"><strong>酸ヶ湯温泉 千人在風呂</strong><em>160 畳檜葉木造，300 年歷史，¥800</em></span></li>
+          <li><span class="time">13:00</span><span class="activity"><strong>酸ヶ湯健康鍋</strong><em>名物大鍋，¥1,500</em></span></li>
+          <li><span class="time">14:30</span><span class="activity"><strong>回奧入瀨温泉旅館</strong><em>下午茶 + 二次泡湯</em></span></li>
+          <li><span class="time">18:00</span><span class="activity"><strong>旅館晚餐</strong><em>囲炉裏山菜會席</em></span></li>
+          <li><span class="time">19:30</span><span class="activity"><strong>星空溫泉</strong><em>深山無光害，銀河可見</em></span></li>
+        </ul>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              蔦七沼
+              <span class="ja">蔦七沼 · 蔦沼</span>
+            </div>
+            <div class="spot-meta"><strong>紅葉 TOP5</strong> · 2.8km 環狀</div>
+          </div>
+          <p>十和田八幡平國立公園內的湖沼群，蔦沼、鏡沼、月沼、長沼、菅沼、瓢箪沼、赤沼等七個沼澤散落在原生檻葉林中。清晨無風時，水面如鏡，倒映紅葉——這就是所謂的「水鏡」，是日本紅葉攝影的聖地。</p>
+          <div class="spot-grid">
+            <div><span class="label">環狀步道</span>2.8km / 70 min</div>
+            <div><span class="label">建議鞋</span>登山鞋（濕滑）</div>
+            <div><span class="label">早場預約</span>8/1 起（8 人/車）</div>
+            <div><span class="label">見頃</span>10/中 – 11/初</div>
+          </div>
+        </div>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              城ヶ倉大橋
+              <span class="ja">城ヶ倉大橋</span>
+            </div>
+            <div class="spot-meta"><strong>上路式日本第 1</strong> · 360m</div>
+          </div>
+          <p>連接八甲田連峰與奧入瀨溪流的關鍵大橋。日本最長的上路式拱橋，橋下谷底深 122m。站在橋上可以 360 度環視八甲田連峰紅葉。橋旁設有免費停車場與觀景台。</p>
+          <div class="spot-grid">
+            <div><span class="label">橋長</span>360m</div>
+            <div><span class="label">谷深</span>122m</div>
+            <div><span class="label">停車</span>免費</div>
+            <div><span class="label">門票</span>免費</div>
+          </div>
+        </div>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              酸ヶ湯温泉
+              <span class="ja">酸ヶ湯温泉</span>
+            </div>
+            <div class="spot-meta"><strong>秘湯</strong> · 300 年歷史</div>
+          </div>
+          <p>300 年歷史的秘湯。名物是「千人在風呂」——160 畳檜葉木造的混浴大浴場，曾是江戶時代湯治場。硫黃泉、酸性，據說對皮膚病與婦女病有效。傍晚空無一人時獨佔風呂，是世界級的奢侈。</p>
+          <div class="spot-grid">
+            <div><span class="label">千人在風呂</span>160 畳</div>
+            <div><span class="label">泉質</span>酸性硫黃泉</div>
+            <div><span class="label">入館</span>¥800</div>
+            <div><span class="label">混浴</span>有女性專用時段</div>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">⚠ 蔦沼早場預約是關鍵</div>
+          <p>2025 年蔦沼早場預約制期間為 10/23 – 11/3。D3 (11/2) 落在預約制高峰日內。<strong>2026/8/1 起</strong>到 <a href="https://www.city.towada.lg.jp/kanko/guide/tutanuma.html" target="_blank">十和田市官網</a> 搶早場預約（限 8 人/車、¥2,000）。搶不到就改 D3 中午才去（免預約但付 ¥2,000 停車費）。</p>
+        </div>
+      </div>
+    </div>
+
+<!-- =============================================================
+     D4 — 奧入瀨東段
+     ============================================================= -->
+    <div class="day">
+      <aside class="day-meta">
+        <span class="day-tag">Day 04</span>
+        <div class="day-date">2026.11.03（二）</div>
+        <h2 class="day-title">奧入瀨東段 + 蔦沼午後</h2>
+        <p class="day-subtitle">奧入瀨溪流的另一面：燒山方向的銚子大滝，是奧入瀨最大的瀑布。午後若需要再補位蔦沼拍照。晚上回青森市區。</p>
+        <div class="day-stats">
+          <span class="day-stat">🥾 <strong>5km</strong> 步行</span>
+          <span class="day-stat">🚃 <strong>3h</strong> 巴士</span>
+        </div>
+      </aside>
+
+      <div class="day-content">
+        <h3>時程</h3>
+        <ul class="schedule">
+          <li><span class="time">08:00</span><span class="activity"><strong>旅館朝食 + Check-out + 寄放行李</strong><em>奧入瀨温泉最後一頓</em></span></li>
+          <li><span class="time">09:00</span><span class="activity"><strong>旅館 → みずうみ号 84 号</strong><em>經燒山方向</em></span></li>
+          <li><span class="time">11:00</span><span class="activity"><strong>奧入瀨東段健行</strong><em>燒山 → 銚子大滝，5km，2h</em></span></li>
+          <li><span class="time">13:00</span><span class="activity"><strong>銚子大滝巴士 → 蔦沼</strong><em>午後段免預約</em></span></li>
+          <li><span class="time">14:00</span><span class="activity"><strong>蔦沼午後補位</strong><em>若早上沒搶到預約，再來一次</em></span></li>
+          <li><span class="time">16:00</span><span class="activity"><strong>蔦温泉 → 巴士 → 青森駅</strong><em>直達約 2h08</em></span></li>
+          <li><span class="time">18:00</span><span class="activity"><strong>抵達青森 → 飯店 Check-in</strong><em>連住 2 晚</em></span></li>
+          <li><span class="time">19:00</span><span class="activity"><strong>青森駅前晚餐</strong><em>富士食堂味噌咖哩 或 A-FACTORY 蘋果酒</em></span></li>
+        </ul>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              銚子大滝
+              <span class="ja">銚子大滝</span>
+            </div>
+            <div class="spot-meta"><strong>奧入瀨最大瀑布</strong> · 20m × 7m</div>
+          </div>
+          <p>奧入瀨溪流最大的瀑布，寬 20m、高 7m，水量豐沛時如白練垂掛。古名「魚止めの滝」——因為瀑布太高，魚無法迴游至十和田湖，這也是十和田湖原本沒有魚的原因。紅葉期水面會被染上一層淡淡的橙紅。</p>
+          <div class="spot-grid">
+            <div><span class="label">寬度</span>20m</div>
+            <div><span class="label">高度</span>7m</div>
+            <div><span class="label">位置</span>奧入瀨東段</div>
+            <div><span class="label">門票</span>免費</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- =============================================================
+     D5 — 八甲田纜車 + 青森美術館
+     ============================================================= -->
+    <div class="day">
+      <aside class="day-meta">
+        <span class="day-tag">Day 05</span>
+        <div class="day-date">2026.11.04（三）</div>
+        <h2 class="day-title">八甲田纜車 + 美術館</h2>
+        <p class="day-subtitle">山頂已落葉、山腰正紅的八甲田纜車。下午回到青森市區，看奈良美智與夏卡爾的四大舞台背景畫。</p>
+        <div class="day-stats">
+          <span class="day-stat">🚃 <strong>1h</strong> 巴士</span>
+          <span class="day-stat">🎨 <strong>美術館</strong></span>
+        </div>
+      </aside>
+
+      <div class="day-content">
+        <h3>時程</h3>
+        <ul class="schedule">
+          <li><span class="time">07:30</span><span class="activity"><strong>青森駅前早餐</strong></span></li>
+          <li><span class="time">08:00</span><span class="activity"><strong>青森駅東口 → ねぶたん号 → 八甲田纜車駅前</strong><em>¥1,100，60 min</em></span></li>
+          <li><span class="time">09:00</span><span class="activity"><strong>八甲田纜車上山</strong><em>首班 9:00，來回 ¥2,200</em></span></li>
+          <li><span class="time">09:30</span><span class="activity"><strong>山頂公園 紅葉健行</strong><em>環狀步道 30–60 min</em></span></li>
+          <li><span class="time">11:00</span><span class="activity"><strong>下山 → 巴士回青森</strong></span></li>
+          <li><span class="time">12:30</span><span class="activity"><strong>走路 10 min → 青森県立美術館</strong><em>午餐（美術館 café）</em></span></li>
+          <li><span class="time">13:30</span><span class="activity"><strong>青森県立美術館</strong><em>奈良美智 + 夏卡爾 Aleko 四幅，¥1,800</em></span></li>
+          <li><span class="time">16:00</span><span class="activity"><strong>ねぶたの家 ワ・ラッセ</strong><em>立體睡魔燈籠展示，¥600</em></span></li>
+          <li><span class="time">17:30</span><span class="activity"><strong>古川市場 のっけ丼</strong><em>再訪自選海鮮，¥1,500</em></span></li>
+          <li><span class="time">19:00</span><span class="activity"><strong>飯店休息</strong></span></li>
+        </ul>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              八甲田纜車
+              <span class="ja">八甲田ロープウェー</span>
+            </div>
+            <div class="spot-meta"><strong>紅葉山頂</strong> · 高低差 650m</div>
+          </div>
+          <p>山麓站到山頂站高低差 650m，10 分鐘的空中散步。11 月的山頂可能已下雪，可以看見紅葉白雪交錯的奇景。11 月中旬前末班纜車為 16:20。</p>
+          <div class="spot-grid">
+            <div><span class="label">來回票</span>¥2,200</div>
+            <div><span class="label">單程票</span>¥1,400</div>
+            <div><span class="label">營運</span>9:00 – 16:20</div>
+            <div><span class="label">末班變更</span>11 月中旬 → 15:40</div>
+          </div>
+        </div>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              青森県立美術館
+              <span class="ja">青森県立美術館</span>
+            </div>
+            <div class="spot-meta"><strong>奈良美智</strong> · 夏卡爾</div>
+          </div>
+          <p>收藏棟方志功、奈良美智等青森出身藝術家作品。最重要的是夏卡爾的芭蕾舞劇《Aleco》四幅巨型舞台背景畫——這是夏卡爾為紐約市立芭蕾舞團創作，<strong>難得一次四幅同台展出至 2027 年 3 月</strong>。</p>
+          <div class="spot-grid">
+            <div><span class="label">票價</span>¥1,800</div>
+            <div><span class="label">Aleko 展期</span>至 2027.03</div>
+            <div><span class="label">從青森駅</span>巴士 20 min</div>
+            <div><span class="label">推薦</span>必看奈良美智</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- =============================================================
+     D6 — 蕪嶋 + 種差海岸
+     ============================================================= -->
+    <div class="day">
+      <aside class="day-meta">
+        <span class="day-tag">Day 06</span>
+        <div class="day-date">2026.11.05（四）</div>
+        <h2 class="day-title">蕪嶋神社 + 種差海岸</h2>
+        <p class="day-subtitle">從青森拉車到八戶，當作未來 2 晚的基地。蕪嶋神社 11 月已無黑尾鷗喧囂，剩寧靜海岸。種差海岸的天草地毯與三陸海岸絕景。</p>
+        <div class="day-stats">
+          <span class="day-stat">🚃 <strong>1h30</strong> JR</span>
+          <span class="day-stat">🌊 <strong>海景</strong></span>
+        </div>
+      </aside>
+
+      <div class="day-content">
+        <h3>時程</h3>
+        <ul class="schedule">
+          <li><span class="time">08:00</span><span class="activity"><strong>青森朝食 + Check-out</strong></span></li>
+          <li><span class="time">09:30</span><span class="activity"><strong>青森駅 → JR 奥羽本線 → 八戶駅</strong><em>1h30，JR PASS 可用</em></span></li>
+          <li><span class="time">11:00</span><span class="activity"><strong>八戶飯店 Check-in + 寄放行李</strong></span></li>
+          <li><span class="time">11:30</span><span class="activity"><strong>JR 八戶線 → 蕪島駅 → 走路 5 min</strong></span></li>
+          <li><span class="time">12:00</span><span class="activity"><strong>蕪嶋神社</strong><em>700 年歷史 + 11 月寧靜海岸，¥200</em></span></li>
+          <li><span class="time">13:00</span><span class="activity"><strong>蕪島 → 種差海岸</strong><em>JR 八戶線 2 站</em></span></li>
+          <li><span class="time">14:30</span><span class="activity"><strong>種差海岸散步</strong><em>天草地毯 + 葦毛崎展望台 + 三陸海岸絕景</em></span></li>
+          <li><span class="time">16:30</span><span class="activity"><strong>回八戶 → 八食中心</strong><em>海鮮市場 + 食堂，¥2,000</em></span></li>
+          <li><span class="time">19:00</span><span class="activity"><strong>飯店休息</strong></span></li>
+        </ul>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              蕪嶋神社
+              <span class="ja">蕪嶋神社</span>
+            </div>
+            <div class="spot-meta"><strong>700 年歷史</strong> · 黑尾鷗繁殖地</div>
+          </div>
+          <p>漂浮在海上的小島，被視為「漁業的守護神」。3–8 月有 3–4 萬隻黑尾鷗在此繁殖，喧囂無比；<strong>11 月已南飛，剩下朱紅鳥居、浪濤與海岸線</strong>——是另一種寧靜之美。</p>
+          <div class="spot-grid">
+            <div><span class="label">拜觀</span>免費</div>
+            <div><span class="label">御朱印</span>¥200</div>
+            <div><span class="label">JR 八戶線</span>蕪島駅走路 5 min</div>
+            <div><span class="label">11 月</span>黑尾鷗已離去</div>
+          </div>
+        </div>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              種差海岸
+              <span class="ja">種差海岸</span>
+            </div>
+            <div class="spot-meta"><strong>三陸復興國立公園</strong> · 散步</div>
+          </div>
+          <p>長約 12 公里的海岸線，被指定為三陸復興國立公園。種差天然草坪、葦毛崎展望台、白岩海岸、千叠敷，每一段都不同。搭配太平洋的海風，是青森與八戶最療癒的散步路線。</p>
+          <div class="spot-grid">
+            <div><span class="label">長度</span>12km</div>
+            <div><span class="label">門票</span>免費</div>
+            <div><span class="label">JR</span>種差海岸駅</div>
+            <div><span class="label">推薦</span>天然草坪 + 展望台</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- =============================================================
+     D7 — 是川繩文館 + 中野紅葉山點燈
+     ============================================================= -->
+    <div class="day">
+      <aside class="day-meta">
+        <span class="day-tag">Day 07</span>
+        <div class="day-date">2026.11.06（五）</div>
+        <h2 class="day-title">陸奧小京都點燈</h2>
+        <p class="day-subtitle">上午是國寶合掌土偶與館鼻岸壁朝市，下午衝黑石中野紅葉山看夜間點燈——陸奧小京都的不動橋紅葉。</p>
+        <div class="day-stats">
+          <span class="day-stat">🏺 <strong>繩文</strong></span>
+          <span class="day-stat">🍁 <strong>點燈</strong></span>
+        </div>
+      </aside>
+
+      <div class="day-content">
+        <h3>時程</h3>
+        <ul class="schedule">
+          <li><span class="time">08:00</span><span class="activity"><strong>八戶早餐</strong><em>みなと食堂 せんべい汁，¥1,000</em></span></li>
+          <li><span class="time">09:00</span><span class="activity"><strong>是川繩文館</strong><em>國寶合掌土偶，¥350</em></span></li>
+          <li><span class="time">11:30</span><span class="activity"><strong>館鼻岸壁朝市</strong><em>日本最大朝市之一，海鮮丼午餐 ¥1,500</em></span></li>
+          <li><span class="time">13:30</span><span class="activity"><strong>八戶駅 → JR → 黑石駅</strong><em>経由弘前 ~1h30</em></span></li>
+          <li><span class="time">15:00</span><span class="activity"><strong>黑石駅 → 弘南巴士 → 中野紅葉山</strong><em>¥300，配合點燈班次</em></span></li>
+          <li><span class="time">16:00</span><span class="activity"><strong>抵達中野紅葉山</strong><em>不動橋 + 紅葉山散步</em></span></li>
+          <li><span class="time">16:30–21:00</span><span class="activity"><strong>🍁 紅葉夜間點燈</strong><em>夢幻紅葉</em></span></li>
+          <li><span class="time">19:00</span><span class="activity"><strong>中野紅葉山簡餐</strong><em>¥1,200</em></span></li>
+          <li><span class="time">21:00</span><span class="activity"><strong>黑石駅 → JR → 回八戶</strong><em>経由弘前 1h30</em></span></li>
+          <li><span class="time">22:30</span><span class="activity"><strong>飯店休息</strong></span></li>
+        </ul>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              是川繩文館
+              <span class="ja">是川縄文館</span>
+            </div>
+            <div class="spot-meta"><strong>國寶合掌土偶</strong> · 繩文</div>
+          </div>
+          <p>收藏國寶「合掌土偶」——一個表情神秘、雙手合十的 5,000 年前土偶，是日本繩文時代最具代表性的藝術品之一。是川遺跡是日本指定的重要文化財，館內展出大量繩文時代的生活器物。</p>
+          <div class="spot-grid">
+            <div><span class="label">票價</span>¥350</div>
+            <div><span class="label">鎮館寶</span>合掌土偶</div>
+            <div><span class="label">年代</span>繩文後期 5,000 年前</div>
+            <div><span class="label">從八戶駅</span>巴士 15 min</div>
+          </div>
+        </div>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              中野紅葉山
+              <span class="ja">中野もみじ山</span>
+            </div>
+            <div class="spot-meta"><strong>陸奧小京都</strong> · 點燈 16:30–21:00</div>
+          </div>
+          <p>黑石市「中野神社」周邊的紅葉山公園，被譽為「陸奧小京都」。不動橋、紅葉山、河流環繞，<strong>夜間點燈（16:30–21:00）是這裡一年中最美的時刻</strong>——紅葉倒映在水面上，加上暖色燈光，夢幻至極。</p>
+          <div class="spot-grid">
+            <div><span class="label">點燈期間</span>10/中 – 11/上（2026 待查）</div>
+            <div><span class="label">時間</span>16:30 – 21:00</div>
+            <div><span class="label">門票</span>免費</div>
+            <div><span class="label">交通</span>弘南巴士 中野神社前</div>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">⚠ 點燈時間需確認</div>
+          <p>2025 年中野紅葉山點燈為 10/18 – 11/9，D7 (11/6) 落在點燈期內。<strong>2026 公告待查</strong>。黑石距八戶（1h30）比距青森（1h+）遠但更順。</p>
+        </div>
+      </div>
+    </div>
+
+<!-- =============================================================
+     D8 — 谷地 → 酸ヶ湯 縱走（反方向）
+     ============================================================= -->
+    <div class="day">
+      <aside class="day-meta">
+        <span class="day-tag">Day 08</span>
+        <div class="day-date">2026.11.07（六）</div>
+        <h2 class="day-title">秘湯縱走（反方向）</h2>
+        <p class="day-subtitle">從八戶 → 青森 → 谷地溫泉 → 縱走 6h → 酸ヶ湯 → 青森。硬中之硬，但傍晚在空無一人的千人在風呂泡湯是世界級體驗。</p>
+        <div class="day-stats">
+          <span class="day-stat">🥾 <strong>9.5km</strong> 縱走</span>
+          <span class="day-stat">⏱ <strong>6h</strong></span>
+          <span class="day-stat">♨ <strong>空無一人風呂</strong></span>
+        </div>
+      </aside>
+
+      <div class="day-content">
+        <h3>時程</h3>
+        <ul class="schedule">
+          <li><span class="time">06:30</span><span class="activity"><strong>八戶飯店朝食 + Check-out</strong></span></li>
+          <li><span class="time">07:30</span><span class="activity"><strong>八戶駅 → JR → 青森駅</strong><em>1h30</em></span></li>
+          <li><span class="time">09:00</span><span class="activity"><strong>青森駅寄放行李 → 谷地温泉</strong><em>巴士方向</em></span></li>
+          <li><span class="time">09:29</span><span class="activity"><strong>谷地温泉 発 みずうみ号 2 号</strong><em>10:19 著谷地</em></span></li>
+          <li><span class="time">11:00</span><span class="activity"><strong>谷地 → 酸ヶ湯 縱走（反方向）</strong><em>9.5km，5–6h</em></span></li>
+          <li><span class="time">17:00</span><span class="activity"><strong>抵達酸ヶ湯温泉</strong></span></li>
+          <li><span class="time">17:30</span><span class="activity"><strong>酸ヶ湯 千人在風呂（空無一人）</strong><em>¥800</em></span></li>
+          <li><span class="time">19:00</span><span class="activity"><strong>酸ヶ湯晚餐（健康鍋）</strong><em>¥1,500</em></span></li>
+          <li><span class="time">20:30</span><span class="activity"><strong>搭最後巴士回青森</strong><em>ねぶたん号</em></span></li>
+          <li><span class="time">21:30</span><span class="activity"><strong>抵達青森 → 飯店休息</strong></span></li>
+        </ul>
+
+        <div class="spot">
+          <div class="spot-header">
+            <div class="spot-name">
+              谷地溫泉
+              <span class="ja">谷地温泉</span>
+            </div>
+            <div class="spot-meta"><strong>日本三秘湯</strong> · 400 年歷史</div>
+          </div>
+          <p>日本三秘湯之一。國家登錄有形文化財、創業 400 年的木造茅葺屋頂溫泉旅館。泉質獨特，分白湯與藤の湯兩個湯屋。這次不過夜（改為當天穿越縱走），但經過時可拍攝茅葺屋頂 + 山毛櫸林的絕景。</p>
+          <div class="spot-grid">
+            <div><span class="label">歷史</span>400 年</div>
+            <div><span class="label">文化財</span>登錄有形</div>
+            <div><span class="label">湯屋</span>白湯 / 藤の湯</div>
+            <div><span class="label">海拔</span>~900m</div>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">⚠ 縱走反方向風險</div>
+          <p><strong>這條路徑標示較少</strong>，強烈建議請酸ヶ湯旅館提供縱走地圖。<br>裝備：登山鞋、防風外套、手套、頭燈。11 月山區可能 <strong>0°C 以下</strong>。<br>撤退：若中途不適，回頭 5km 即可到谷地（有車接送回青森）。</p>
+        </div>
+      </div>
+    </div>
+
+<!-- =============================================================
+     D9 — 歸途
+     ============================================================= -->
+    <div class="day">
+      <aside class="day-meta">
+        <span class="day-tag">Day 09</span>
+        <div class="day-date">2026.11.08（日）</div>
+        <h2 class="day-title">歸途</h2>
+        <p class="day-subtitle">帶著九日的楓紅記憶，從青森直飛東京轉桃園。一路上可以回想：蔦沼的水鏡、城ヶ倉的紅葉、酸ヶ湯的湯煙……</p>
+        <div class="day-stats">
+          <span class="day-stat">🚃 <strong>3h</strong> 新幹線</span>
+          <span class="day-stat">✈️ <strong>3h</strong> 飛行</span>
+        </div>
+      </aside>
+
+      <div class="day-content">
+        <h3>時程</h3>
+        <ul class="schedule">
+          <li><span class="time">07:00</span><span class="activity"><strong>青森早餐</strong><em>味噌咖哩 + 蘋果 juice</em></span></li>
+          <li><span class="time">08:30</span><span class="activity"><strong>青森駅 → はやぶさ 6 号 → 東京駅</strong><em>11:36 著，事前訂指定席</em></span></li>
+          <li><span class="time">12:00</span><span class="activity"><strong>Skyliner / 京成本線 → 成田／羽田</strong></span></li>
+          <li><span class="time">14:30</span><span class="activity"><strong>東京 → 桃園（CI 系列）</strong><em>16:00 起飛，自行處理</em></span></li>
+          <li><span class="time">19:00</span><span class="activity"><strong>抵達桃園 → 林口</strong></span></li>
+        </ul>
+
+        <div class="callout tip">
+          <div class="callout-title">返家前</div>
+          <p>在東京駅轉乘前，建議到站內的「<strong>ecute</strong>」或「<strong>GRANSTA</strong>」買些青森限定的伴手禮——蘋果糖、味噌咖哩調理包、藍莓果醬，帶回台灣分送親友。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================
+     LODGING
+     ============================================================= -->
+<section id="lodging" class="lodging">
+  <div class="container">
+    <span class="eyebrow">L · Lodging</span>
+    <h2>住宿推薦</h2>
+    <p class="lead">八晚分為四個基地：青森市區 4 晚、奧入瀨温泉 2 晚、八戶市區 2 晚、外加縱走日的青森最後一晚。預算從經濟到奢華，依你偏好挑選。</p>
+
+    <div class="lodging-grid">
+
+      <div class="hotel">
+        <div class="hotel-tier">RECOMMENDED</div>
+        <div class="hotel-name">ダイワロイネットホテル青森</div>
+        <div class="hotel-name-ja">Daiwa Roynet Hotel Aomori</div>
+        <div class="hotel-price">¥8,500 <small>/ 晚</small></div>
+        <p>青森駅前步行 3 分鐘。連鎖商務飯店品質穩定，雙人房空間在青森屬於寬敞級。早晨可以看到青森灣日出。</p>
+        <div class="hotel-features">
+          <span class="hotel-feature">青森駅前</span>
+          <span class="hotel-feature">含早餐</span>
+          <span class="hotel-feature">連鎖穩定</span>
+        </div>
+        <a href="https://travel.rakuten.co.jp/" target="_blank" class="hotel-cta">→ 楽天トラベル訂房</a>
+      </div>
+
+      <div class="hotel">
+        <div class="hotel-tier">RECOMMENDED</div>
+        <div class="hotel-name">蔦温泉旅館</div>
+        <div class="hotel-name-ja">蔦温泉旅館</div>
+        <div class="hotel-price">¥18,000–22,000 <small>/ 晚</small></div>
+        <p>千年秘湯，創業 1000 年。位於蔦沼步行 10 分鐘處，<strong>D3 早上搶朝燒水鏡的最佳基地</strong>。木造茅葺屋頂建築，硫黃泉質。</p>
+        <div class="hotel-features">
+          <span class="hotel-feature">含 2 食</span>
+          <span class="hotel-feature">秘湯</span>
+          <span class="hotel-feature">蔦沼最近</span>
+        </div>
+        <a href="https://tsutaonsen.com/" target="_blank" class="hotel-cta">→ 官網</a>
+      </div>
+
+      <div class="hotel">
+        <div class="hotel-tier luxe">LUXE</div>
+        <div class="hotel-name">奥入瀬 溪流ホテル</div>
+        <div class="hotel-name-ja">奥入瀬渓流ホテル（星野リゾート）</div>
+        <div class="hotel-price">¥35,000–45,000 <small>/ 晚</small></div>
+        <p>星野集團旗下。房間打開窗就是溪流聲，附設「溪流露天風呂」。附屬展覽空間有現代藝術作品。預算高但體驗最完整。</p>
+        <div class="hotel-features">
+          <span class="hotel-feature">星野品牌</span>
+          <span class="hotel-feature">溪流露天</span>
+          <span class="hotel-feature">含 2 食</span>
+        </div>
+        <a href="https://hoshinoresorts.com/ja/hotels/oiraseryokan/" target="_blank" class="hotel-cta">→ 官網</a>
+      </div>
+
+      <div class="hotel">
+        <div class="hotel-tier">RECOMMENDED</div>
+        <div class="hotel-name">リッチモンドホテル八戸</div>
+        <div class="hotel-name-ja">Richmond Hotel Hachinohe</div>
+        <div class="hotel-price">¥8,000 <small>/ 晚</small></div>
+        <p>八戶駅前步行 5 分鐘。房間乾淨現代、員工服務好。八戶當地最受信賴的商務旅館。</p>
+        <div class="hotel-features">
+          <span class="hotel-feature">八戶駅前</span>
+          <span class="hotel-feature">連鎖穩定</span>
+          <span class="hotel-feature">乾淨現代</span>
+        </div>
+        <a href="https://travel.rakuten.co.jp/" target="_blank" class="hotel-cta">→ 楽天トラベル訂房</a>
+      </div>
+
+      <div class="hotel">
+        <div class="hotel-tier budget">BUDGET</div>
+        <div class="hotel-name">東横 INN 青森駅前</div>
+        <div class="hotel-name-ja">東横INN 青森駅前</div>
+        <div class="hotel-price">¥6,500 <small>/ 晚</small></div>
+        <p>經濟型首選。含簡單早餐、會員更便宜。D1 與 D8 短暫住宿適用。</p>
+        <div class="hotel-features">
+          <span class="hotel-feature">含早餐</span>
+          <span class="hotel-feature">會員折扣</span>
+          <span class="hotel-feature">經濟實惠</span>
+        </div>
+        <a href="https://www.toyoko-inn.com/" target="_blank" class="hotel-cta">→ 官網</a>
+      </div>
+
+      <div class="hotel">
+        <div class="hotel-tier budget">BUDGET</div>
+        <div class="hotel-name">ペンション子ノ口茶屋</div>
+        <div class="hotel-name-ja">子ノ口茶屋</div>
+        <div class="hotel-price">¥8,000–10,000 <small>/ 晚</small></div>
+        <p>奧入瀨溪流散步的入口子ノ口旁，簡單民宿但親切。預算考量或想早上搶先去雲井の滝拍照。</p>
+        <div class="hotel-features">
+          <span class="hotel-feature">子ノ口旁</span>
+          <span class="hotel-feature">經濟</span>
+          <span class="hotel-feature">早鳥拍照</span>
+        </div>
+        <a href="https://travel.rakuten.co.jp/" target="_blank" class="hotel-cta">→ 楽天トラベル訂房</a>
+      </div>
+
+    </div>
+
+    <div class="callout tip" style="margin-top:3rem;">
+      <div class="callout-title">住宿總費用</div>
+      <p>若採「ダイワロイネット + 蔦温泉 + Richmond + 東横」混搭，整趟住宿約 <strong>¥80,000</strong>。若改星野奥入瀬則升至 ¥98,000。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================
+     TRANSPORT
+     ============================================================= -->
+<section id="transport" class="transport">
+  <div class="container">
+    <span class="eyebrow">T · Transport</span>
+    <h2>交通票券</h2>
+    <p class="lead">整段行程以「單買為主、4 日券為輔」。JR PASS 5 日券對此行程反而虧錢，不建議。</p>
+
+    <h3 style="margin-top:3rem;">逐日票券對應</h3>
+    <table class="transport-table">
+      <thead>
+        <tr>
+          <th>日</th>
+          <th>票券</th>
+          <th>用途</th>
+          <th>單買</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>D1</td>
+          <td>はやぶさ 23 号 + 在來線</td>
+          <td>東京 → 新青森 → 青森</td>
+          <td class="price">¥22,000</td>
+        </tr>
+        <tr>
+          <td>D2–D5</td>
+          <td>JR 巴士 4 日券</td>
+          <td>みずうみ号 / ねぶたん号</td>
+          <td class="price">¥7,000</td>
+        </tr>
+        <tr>
+          <td>D6</td>
+          <td>JR 奥羽本線</td>
+          <td>青森 → 八戶</td>
+          <td class="price">¥2,800</td>
+        </tr>
+        <tr>
+          <td>D7</td>
+          <td>JR 奥羽本線 + 弘南巴士</td>
+          <td>八戶 ↔ 黑石</td>
+          <td class="price">¥3,400</td>
+        </tr>
+        <tr>
+          <td>D8</td>
+          <td>JR + 巴士</td>
+          <td>八戶 → 青森 → 谷地 → 酸ヶ湯</td>
+          <td class="price">¥6,400</td>
+        </tr>
+        <tr>
+          <td>D9</td>
+          <td>はやぶさ 6 号</td>
+          <td>青森 → 東京</td>
+          <td class="price">¥22,000</td>
+        </tr>
+        <tr>
+          <td>合計</td>
+          <td></td>
+          <td></td>
+          <td class="price">¥63,600</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:3rem;">預約制項目</h3>
+    <table class="transport-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>平台</th>
+          <th>截止</th>
+          <th>費用</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>蔦沼早場預約（D3）</td>
+          <td>十和田市官網</td>
+          <td>2026/8/1 起搶</td>
+          <td class="price">¥2,000/車</td>
+        </tr>
+        <tr>
+          <td>おいらせ号 23 号（D2）</td>
+          <td>j-bus</td>
+          <td>出發前 30 天</td>
+          <td class="price">¥1,600</td>
+        </tr>
+        <tr>
+          <td>はやぶさ 指定席（D1 + D9）</td>
+          <td>えきねっと</td>
+          <td>出發前 30 天</td>
+          <td class="price">¥3,520</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- =============================================================
+     FOOD
+     ============================================================= -->
+<section id="food" class="food">
+  <div class="container">
+    <span class="eyebrow">F · Food</span>
+    <h2>在地美食</h2>
+    <p class="lead">青森不只是蘋果與味噌咖哩。八戶的せんべい汁、十和田的紅鮭、奧入瀨的山菜、谷地的囲炉裏——每一站都有自己的味道地圖。</p>
+
+    <div class="food-grid">
+
+      <div class="food-card">
+        <div class="food-region">青森市區</div>
+        <div class="food-name">のっけ丼</div>
+        <div class="food-name-ja">古川市場 自選海鮮丼</div>
+        <p>買食券進場、選 5–6 攤自選海鮮、最後由師傅現捏。視覺系海鮮丼的始祖，¥1,000–1,500 吃超飽。</p>
+        <div class="food-shops"><strong>推薦：</strong>古川市場（青森駅旁）</div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-region">青森市區</div>
+        <div class="food-name">味噌咖哩牛乳拉麵</div>
+        <div class="food-name-ja">味噌カレー牛乳ラーメン</div>
+        <p>1970 年代青森學生發明的 B 級美食。味噌、咖哩、牛奶三合一的湯底，搭配寬麵條，是青森人的鄉愁。</p>
+        <div class="food-shops"><strong>推薦：</strong>味の札幌 大西、青函丼屋</div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-region">青森市區</div>
+        <div class="food-name">蘋果派</div>
+        <div class="food-name-ja">りんごパイ</div>
+        <p>青森縣蘋果產量日本第一，蘋果派是必帶伴手禮。蘋果果肉直接派入，咬下有果香。</p>
+        <div class="food-shops"><strong>推薦：</strong>角弘蘋果派專賣、A-FACTORY</div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-region">青森市區</div>
+        <div class="food-name">蘋果酒</div>
+        <div class="food-name-ja">シードル</div>
+        <p>青森是日本蘋果酒產量第一的地區。A-FACTORY 提供 30+ 種蘋果酒試飲，是蘋果酒愛好者的聖地。</p>
+        <div class="food-shops"><strong>推薦：</strong>A-FACTORY（青森駅旁）</div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-region">奧入瀨</div>
+        <div class="food-name">囲炉裏山菜會席</div>
+        <div class="food-name-ja">囲炉裏山菜料理</div>
+        <p>旅館晚餐常見的鄉土料理。在炭火囲炉裏上烤岩魚、山菜味噌、菇類。配上當地清酒，是深山夜晚的儀式感。</p>
+        <div class="food-shops"><strong>推薦：</strong>奧入瀨温泉旅館附設餐廳</div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-region">酸ヶ湯</div>
+        <div class="food-name">酸ヶ湯健康鍋</div>
+        <div class="food-name-ja">酸ヶ湯健康鍋</div>
+        <p>酸ヶ湯温泉名物。在巨大鍋中放入大量蔬菜與豆腐，湯底為白濁的鹽味，特別暖身。</p>
+        <div class="food-shops"><strong>推薦：</strong>酸ヶ湯温泉旅館餐廳</div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-region">八戶</div>
+        <div class="food-name">せんべい汁</div>
+        <div class="food-name-ja">煎餅汁</div>
+        <p>把南部煎餅掰碎放進雞骨湯中，加入蔥、菇類、雞肉煮成。B-1 美食節金牌，¥1,000 以內吃超飽。</p>
+        <div class="food-shops"><strong>推薦：</strong>みなと食堂（八戶）</div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-region">八戶</div>
+        <div class="food-name">八戶前沖海鮮</div>
+        <div class="food-name-ja">八戸前沖海鮮</div>
+        <p>八戶市面太平洋，海流帶來豐富漁獲。八食中心是當地人的廚房——現撈現烤，鮑魚、海膽、鮭魚卵。</p>
+        <div class="food-shops"><strong>推薦：</strong>八食中心（久慈方向巴士）</div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-region">種差海岸</div>
+        <div class="food-name">海景咖啡</div>
+        <div class="food-name-ja">海の見えるカフェ</div>
+        <p>種差海岸沿線有幾家海景咖啡，太平洋配上拿鐵，散步完後最療癒。</p>
+        <div class="food-shops"><strong>推薦：</strong>KUJIRA カフェ、葦毛崎 cafe</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================
+     BUDGET
+     ============================================================= -->
+<section id="budget" class="budget">
+  <div class="container">
+    <span class="eyebrow">¥ · Budget</span>
+    <h2>預算總覽</h2>
+    <p class="lead">整趟行程約 NT$50,000（單人），其中機票佔 35%、住宿 28%、餐飲 20%、交通 15%、門票 2%。</p>
+
+    <div class="budget-grid">
+      <div class="budget-item">
+        <div class="budget-label">機票（桃園 ⇄ 東京）</div>
+        <div class="budget-amount">¥25,000</div>
+        <div class="budget-note">CI 系列經濟艙，含稅</div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-label">住宿 8 晚</div>
+        <div class="budget-amount">¥80,000</div>
+        <div class="budget-note">混搭：青森 ¥8,500×4、奧入瀨 ¥18,000×2、八戶 ¥8,000×2</div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-label">交通票券</div>
+        <div class="budget-amount">¥63,600</div>
+        <div class="budget-note">新幹線 + JR 巴士 + 在來線 + 纜車</div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-label">餐飲 8 天</div>
+        <div class="budget-amount">¥40,000</div>
+        <div class="budget-note">¥5,000/天</div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-label">門票 + 體驗</div>
+        <div class="budget-amount">¥8,000</div>
+        <div class="budget-note">美術館、纜車、遊覽船等</div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-label">伴手禮 + 雜費</div>
+        <div class="budget-amount">¥10,000</div>
+        <div class="budget-note">蘋果派、蘋果酒、味噌咖哩調理包</div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-label">預備金（10%）</div>
+        <div class="budget-amount">¥22,000</div>
+        <div class="budget-note">臨時包車、急救</div>
+      </div>
+      <div class="budget-total">
+        <div class="budget-label">合計</div>
+        <div class="budget-amount">¥248,600 <small>≈ NT$52,000</small></div>
+        <div class="budget-note">單人估價，雙人則住宿減半，約 NT$80,000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================
+     CHECKLIST
+     ============================================================= -->
+<section id="checklist" class="checklist">
+  <div class="container">
+    <span class="eyebrow">✓ · Pre-Departure</span>
+    <h2>行前 Checklist</h2>
+    <p class="lead">出發前 30 天（2026/10/01）為截止日，<strong>蔦沼早場預約 8/1 開搶</strong>是唯一例外。</p>
+
+    <h3 style="margin-top:3rem;">📋 證件 & 票券</h3>
+    <ul class="check-list">
+      <li>
+        <span><strong>買機票（桃園 ⇄ 東京）</strong>CI 系列，越早越便宜。建議 9 月前訂。</span>
+      </li>
+      <li>
+        <span><strong>Suica / PASMO IC 卡</strong>台灣 7-ELEVEN 可領實體，須事先儲值 ¥5,000 起。</span>
+      </li>
+      <li>
+        <span><strong>預約 はやぶさ 指定席（D1 23号 + D9 6号）</strong>出發前 30 天上 えきねっと。</span>
+      </li>
+      <li>
+        <span><strong>預約 おいらせ号 23 号</strong>出發前 30 天上 j-bus。</span>
+      </li>
+      <li>
+        <span><strong>8/1 開搶 蔦沼早場預約（D3）</strong>十和田市官網，限 8 人/車、¥2,000。</span>
+      </li>
+    </ul>
+
+    <h3 style="margin-top:3rem;">🏨 住宿</h3>
+    <ul class="check-list">
+      <li>
+        <span><strong>訂青森飯店 4 晚</strong>ダイワロイネット青森 為首選，9 月前訂。</span>
+      </li>
+      <li>
+        <span><strong>訂奧入瀨温泉旅館 2 晚</strong>蔦温泉旅館 首選，<strong>10 月前訂</strong>，旺季搶手。</span>
+      </li>
+      <li>
+        <span><strong>訂八戶飯店 2 晚</strong>Richmond Hotel Hachinohe。</span>
+      </li>
+    </ul>
+
+    <h3 style="margin-top:3rem;">🎒 裝備</h3>
+    <ul class="check-list">
+      <li>
+        <span><strong>GoreTex 等級防風防水外套</strong>D3 蔦沼 + D8 縱走必備。</span>
+      </li>
+      <li>
+        <span><strong>中筒防水登山鞋</strong>縱走必備，鞋底要 grip。</span>
+      </li>
+      <li>
+        <span><strong>頭燈</strong>D3 早上蔦沼搶水鏡 + D8 縱走下山。</span>
+      </li>
+      <li>
+        <span><strong>保暖水壺（12h 保溫）</strong>山上喝熱水。</span>
+      </li>
+      <li>
+        <span><strong>現金 ¥30,000 開頭</strong>部分巴士 / 鄉下餐廳只收現金。</span>
+      </li>
+    </ul>
+
+    <h3 style="margin-top:3rem;">📱 數位 & 保險</h3>
+    <ul class="check-list">
+      <li>
+        <span><strong>旅遊保險</strong>含海外突發疾病與高山症，建議富邦 / 國泰 / 明台任一張。</span>
+      </li>
+      <li>
+        <span><strong>eSIM</strong>推薦 Ubigi 亞洲 5GB / 15 天，約 NT$500。</span>
+      </li>
+      <li>
+        <span><strong>下載 Navitime + Google Maps 離線圖</strong>青森區域離線地圖必備。</span>
+      </li>
+      <li>
+        <span><strong>印酸ヶ湯縱走地圖</strong>從 <a href="https://sukayu.jp" target="_blank">酸ヶ湯官網</a> 下載。</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============================================================
+     RISK
+     ============================================================= -->
+<section id="risk" class="risk">
+  <div class="container">
+    <span class="eyebrow">! · Risk</span>
+    <h2>風險預案</h2>
+    <p class="lead">9 天行程有 6 個可能被打亂的環節。每個都有 Plan B——出發前確認過、出發中遇到時不慌。</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th style="width:30%">風險情境</th>
+          <th style="width:30%">判斷信號</th>
+          <th>預案</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>蔦沼早場預約搶不到</td>
+          <td>8/1 開搶當天秒殺</td>
+          <td>改 D3 中午才去（免預約但 ¥2,000 停車費）；或 D4 午後補位一次</td>
+        </tr>
+        <tr>
+          <td>D3 遇雨／雪</td>
+          <td>天氣預報降水 > 50%</td>
+          <td>改蔦温泉旅館室內浴 + 奧入瀨東段巴士一日遊（取消蔦七沼）</td>
+        </tr>
+        <tr>
+          <td>D8 縱走體力不足</td>
+          <td>走到 4km 處心跳 > 150</td>
+          <td>谷地→酸ヶ湯 5km 內可回頭，回谷地溫泉有車接送回青森；當晚改住酸ヶ湯</td>
+        </tr>
+        <tr>
+          <td>中野紅葉山點燈取消</td>
+          <td>2026 公告</td>
+          <td>D7 改「黑石溫泉街 + 中野紅葉山白天版」</td>
+        </tr>
+        <tr>
+          <td>寒流／大雪導致巴士停駛</td>
+          <td>青森 JR 公告</td>
+          <td>改在青森市區（美術館、ねぶたの家、古川市場）撐一天</td>
+        </tr>
+        <tr>
+          <td>新幹線滿席</td>
+          <td>えきねっと查無指定席</td>
+          <td>JR PASS 啟用前 30 天就訂；若仍滿，改自由席或はやぶさ 外的やまびこ</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout warn" style="margin-top:2rem;">
+      <div class="callout-title">⚠ 最重要的 3 個搶票日</div>
+      <ul>
+        <li><strong>8/1 早上 10:00</strong> — 蔦沼早場預約（限 8 人/車，搶不到就沒了）</li>
+        <li><strong>9 月底</strong> — 奧入瀨温泉住宿（旺季前 1 個月訂）</li>
+        <li><strong>10/1 早上 10:00</strong> — はやぶさ 指定席（D1 23号 + D9 6号）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================
+     COLOPHON
+     ============================================================= -->
+<footer class="colophon">
+  <div class="container">
+    <span class="eyebrow" style="color:rgba(252,250,247,0.6);">Colophon</span>
+    <h2>關於這份指南</h2>
+    <p>這份旅遊指南由 Hermes / Links 為 Eric 編製，整合了 v1 五區方案到 v2 三點深度的取捨結果。資料截止 2026 年 7 月，所有票券與時刻表請於出發前一個月再次確認。</p>
+    <p>2026 年的紅葉預測、蔦沼預約制度、岩木山 Skyline 開放情形，會隨著 9–10 月陸續更新，建議設立 Telegram cron 提醒每週查一次。</p>
+    <p style="margin-top:2em; font-style:italic; color:rgba(252,250,247,0.4);">「紅葉不會等人，但好的行程會讓你在對的時間出現在對的地方。」</p>
+    <div class="colophon-meta">
+      Compiled 2026.07.02 · Hermes Agent · For Eric<br>
+      Source file: ~/.hermes/workspace/data/travel/aomori-2026-10.md
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
